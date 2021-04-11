@@ -63,6 +63,4 @@ public abstract class Produto
 				System.out.println("Sem estoque disponível.");
 			}
 		}
-	
-		
 }

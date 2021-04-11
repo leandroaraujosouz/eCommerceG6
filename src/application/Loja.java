@@ -52,29 +52,34 @@ public class Loja
 				{
 					if (confirma[opcao] == true) 
 					{
-						System.out.printf("Descrição: %s %s | Valor Unit: R$%.2f | Disponível em estoque: %d\n", lista.get(opcao).getDescricao(),lista.get(opcao).getMarca(),lista.get(opcao).getValorUnid(), lista.get(opcao).getEstoque());
-						System.out.print("\nQuantidade: ");
-						quantidade = leia.nextInt();
-						
-						 if (quantidade <= lista.get(opcao).getEstoque() && quantidade >=0) 
-						 {
-							 lista.get(opcao).tiraEstoque(quantidade);
-							 carrinho.add(roupa = new Roupa(lista.get(opcao).getCodigo(),lista.get(opcao).getDescricao(),lista.get(opcao).getValorUnid(),quantidade, lista.get(opcao).getMarca())); 
+						if(lista.get(opcao).getEstoque()>0) 
+						{
+							System.out.printf("Descrição: %s %s | Valor Unit: R$%.2f | Disponível em estoque: %d\n", lista.get(opcao).getDescricao(),lista.get(opcao).getMarca(),lista.get(opcao).getValorUnid(), lista.get(opcao).getEstoque());
+							System.out.print("\nQuantidade: ");
+							quantidade = leia.nextInt();
 							
-							 if(quantidade > 0) 
+							 if (quantidade <= lista.get(opcao).getEstoque() && quantidade >=0) 
 							 {
-								confirma[opcao] = false; 
+								 lista.get(opcao).tiraEstoque(quantidade);
+								 carrinho.add(roupa = new Roupa(lista.get(opcao).getCodigo(),lista.get(opcao).getDescricao(),lista.get(opcao).getValorUnid(),quantidade, lista.get(opcao).getMarca())); 
+								
+								 if(quantidade > 0) 
+								 {
+									confirma[opcao] = false; 
+								 }
 							 }
-						 }
-							 else if (quantidade > lista.get(opcao).getEstoque())
-							 {
-								 System.out.println("\nQuantidade não disponível em estoque.\n");
-							 }
-							 else 
-							 {
-								 System.out.println("\nOpção inválida.");
-							 }
-						 
+								 else if (quantidade > lista.get(opcao).getEstoque())
+								 {
+									 System.out.println("\nQuantidade não disponível em estoque.\n");
+								 }
+								 else 
+								 {
+									 System.out.println("\nOpção inválida.");
+								 }
+						}
+						else {
+							System.out.println("fora de estoque ");
+						}
 						}	 
 					else 
 					{
@@ -83,6 +88,12 @@ public class Loja
 				}
 					
 				else if (opcao == x) 
+				{
+					if(carrinho.size()==0) 
+					{
+						System.out.println("O carrinho esta vazio\nRedirecionado para menu pricipal\n");
+					}
+					else 
 					{
 						limpa();
 						System.out.println("Carrinho");
@@ -95,10 +106,12 @@ public class Loja
 							confirma[x]=true;
 						}
 					}
-					else if (opcao == (x+1))
-					{
-						System.out.println("Fim do programa");
-					}
+						
+				}
+				else if (opcao == (x+1))
+				{
+					System.out.println("Fim do programa");
+				}
 		
 				else 
 				{
