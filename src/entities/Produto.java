@@ -22,6 +22,7 @@ public abstract class Produto
 			this.estoque = estoque;
 		//
 		}
+		
 		public String getDescricao() {
 			return descricao;
 		}

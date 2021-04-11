@@ -1,7 +1,10 @@
 package application;
 
-import entities.*;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Locale;
+import java.util.Scanner;
+import entities.Roupa;
 
 public class Loja 
 {
@@ -13,7 +16,7 @@ public class Loja
 		int opcao;
 		int x;
 		int quantidade;
-	
+		
 		
 		Locale.setDefault(Locale.US);
 		Scanner leia = new Scanner (System.in); 
@@ -24,8 +27,9 @@ public class Loja
 		lista.add(roupa = new Roupa ("S00155","Camisetas",45.50, 10,"Kemet"));
 		lista.add(roupa = new Roupa ("J00156","Jaquetas",125.99, 10,"Kemet"));
 		lista.add(roupa = new Roupa ("D00157","Vestidos",110.00, 10,"Kemet"));
+		lista.add(roupa = new Roupa ("D00158","Shorts",55.00, 10,"Kemet"));
 
-		boolean confirma [] = new boolean [lista.size()];
+		boolean confirma[] = new boolean [lista.size()];
 		for (x = 0; x<confirma.length;x++)
 		{
 			confirma[x]=true;
@@ -38,7 +42,7 @@ public class Loja
 				{
 					System.out.printf("%d - %s\n",x+1,lista.get(x).getDescricao());
 				}
-				System.out.printf("%d - Carrinho.\n",x+1);
+				System.out.printf("%d - Carrinho\n",x+1);
 				System.out.printf("%d - Sair\n", x+2);
 				System.out.println("\nSelecione uma categoria: ");
 				opcao = leia.nextInt();
@@ -78,7 +82,7 @@ public class Loja
 					}
 				}
 					
-					else if (opcao == (x)) 
+				else if (opcao == x) 
 					{
 						limpa();
 						System.out.println("Carrinho");
