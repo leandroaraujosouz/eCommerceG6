@@ -67,30 +67,33 @@ public class Loja {
 			}
 			else if (opcao == 3) 
 			{
-				System.out.println("Quantas vezes deseja parcelar?");
-				System.out.println("1 - 1x (juros 10%)\n2 - 2x (juros 20%): ");
-				opcao = leia.nextInt();
-				
-				if(opcao == 1)
+				do
 				{
-					juros10 = total*0.1;
-					System.out.println("NOTA FISCAL 987506042021");
-					System.out.println("ESTABELECIMENTO: "+nome+"- G6");
-					System.out.println("CNPJ: 489.5765.3350-54");
-					System.out.printf("Taxa de imposto: R$%.2f\nJuros: R$%.2f\nTotal da compra: R$%.2f",imposto, juros10, (total+juros10));
-				}
-				else if (opcao == 2)
-				{
-					juros20 = total*0.2;
-					System.out.println("NOTA FISCAL 995506042021");
-					System.out.println("ESTABELECIMENTO: "+nome+"- G6");
-					System.out.println("CNPJ: 489.5765.3350-54");
-					System.out.printf("Taxa de imposto: R$%.2f\nJuros: R$%.2f\nValor parcela: R$ %.2f\nTotal da compra: R$%.2f",imposto, juros20, ((total+juros20)/2),(total+juros20));
-				}
-				else
-				{
-					System.out.println("Opção de parcelamento não disponível.");
-				}	
+					System.out.println("Quantas vezes deseja parcelar?");
+					System.out.println("1 - 1x (juros 10%)\n2 - 2x (juros 20%): ");
+					opcao = leia.nextInt();
+					
+					if(opcao == 1)
+					{
+						juros10 = total*0.1;
+						System.out.println("NOTA FISCAL 987506042021");
+						System.out.println("ESTABELECIMENTO: "+nome+"- G6");
+						System.out.println("CNPJ: 489.5765.3350-54");
+						System.out.printf("Taxa de imposto: R$%.2f\nJuros: R$%.2f\nTotal da compra: R$%.2f",imposto, juros10, (total+juros10));
+					}
+					else if (opcao == 2)
+					{
+						juros20 = total*0.2;
+						System.out.println("NOTA FISCAL 995506042021");
+						System.out.println("ESTABELECIMENTO: "+nome+"- G6");
+						System.out.println("CNPJ: 489.5765.3350-54");
+						System.out.printf("Taxa de imposto: R$%.2f\nJuros: R$%.2f\nValor parcela: R$ %.2f\nTotal da compra: R$%.2f",imposto, juros20, ((total+juros20)/2),(total+juros20));
+					}
+					else
+					{
+						System.out.println("Opção de parcelamento não disponível.");
+					}
+				}while(opcao != 1 && opcao != 2);
 			}
 			else {
 				System.out.println("Opção invalida");
