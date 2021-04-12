@@ -36,7 +36,7 @@ public class Loja {
 		double imposto;
 		int opcao;
 		
-		System.out.printf("Loja: %s - G6\n%s\n",nome,cnpj);
+		System.out.printf("Loja: %s\n%s\n",nome,cnpj);
 		for (Roupa itens : lista)
 		{
 			System.out.printf("Produto: %s | Valor Unit: R$%.2f | Qtde: %d | Valor total: R$%.2f\n",itens.getDescricao(),itens.getValorUnid(),itens.getEstoque(),itens.getValorUnid()*itens.getEstoque());
@@ -54,14 +54,14 @@ public class Loja {
 			{
 				desconto = total*0.1;
 				System.out.println("NOTA FISCAL 985506042021");
-				System.out.println("ESTABELECIMENTO: "+nome+"- G6");
+				System.out.println("ESTABELECIMENTO: "+nome);
 				System.out.println("CNPJ: 489.5765.3350-54");
 				System.out.printf("\nTaxa de imposto: R$%.2f\nDesconto: R$%.2f\nTotal da compra: R$%.2f",imposto, desconto, (total-desconto));
 			}
 			else if (opcao==2) 
 			{
 				System.out.println("NOTA FISCAL 985506042021");
-				System.out.println("ESTABELECIMENTO: "+nome+"- G6");
+				System.out.println("ESTABELECIMENTO: "+nome);
 				System.out.println("CNPJ: 489.5765.3350-54");
 				System.out.printf("Taxa de imposto: R$%.2f\nTotal da compra: R$%.2f",imposto, total);
 			}
@@ -77,7 +77,7 @@ public class Loja {
 					{
 						juros10 = total*0.1;
 						System.out.println("NOTA FISCAL 987506042021");
-						System.out.println("ESTABELECIMENTO: "+nome+"- G6");
+						System.out.println("ESTABELECIMENTO: "+nome);
 						System.out.println("CNPJ: 489.5765.3350-54");
 						System.out.printf("Taxa de imposto: R$%.2f\nJuros: R$%.2f\nTotal da compra: R$%.2f",imposto, juros10, (total+juros10));
 					}
@@ -85,7 +85,7 @@ public class Loja {
 					{
 						juros20 = total*0.2;
 						System.out.println("NOTA FISCAL 995506042021");
-						System.out.println("ESTABELECIMENTO: "+nome+"- G6");
+						System.out.println("ESTABELECIMENTO: "+nome);
 						System.out.println("CNPJ: 489.5765.3350-54");
 						System.out.printf("Taxa de imposto: R$%.2f\nJuros: R$%.2f\nValor parcela: R$ %.2f\nTotal da compra: R$%.2f",imposto, juros20, ((total+juros20)/2),(total+juros20));
 					}
@@ -100,7 +100,7 @@ public class Loja {
 			}
 		}
 		while(opcao !=1 && opcao !=2 && opcao !=3);
-		System.out.println("\nDigite qualquer tecla para continuar: ");
+		System.out.println("\nDigite qualquer tecla para finalizar a compra: ");
 		leia.next();
 	}
 	

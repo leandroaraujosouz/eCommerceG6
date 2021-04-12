@@ -59,7 +59,7 @@ public class CadVenda {
 								System.out.print("\nQuantidade: ");
 								quantidade = leia.nextInt();
 								
-								 if (quantidade <= lista.get(opcao).getEstoque() && quantidade >=0) 
+								 if (quantidade <= lista.get(opcao).getEstoque() && quantidade >0) 
 								 {
 									 lista.get(opcao).tiraEstoque(quantidade);
 									 carrinho.add(roupa = new Roupa(lista.get(opcao).getCodigo(),lista.get(opcao).getDescricao(),lista.get(opcao).getValorUnid(),quantidade, lista.get(opcao).getMarca())); 
@@ -73,7 +73,7 @@ public class CadVenda {
 								 {
 									 System.out.println("\nQuantidade não disponível em estoque.\n");
 								 }
-								else 
+								else
 								{
 									System.out.println("\nOpção inválida.");
 								}
